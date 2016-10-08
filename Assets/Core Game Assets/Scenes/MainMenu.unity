@@ -912,7 +912,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c367a85619c2bc4391dc936b7246820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuBGM: {fileID: 8300000, guid: ec0a1e5d0e96a2542a1bf5890f2884f5, type: 3}
+  menuBGM: {fileID: 8300000, guid: a5a8517f2ed4bff43aa939350486e31f, type: 3}
 --- !u!1 &2102581564
 GameObject:
   m_ObjectHideFlags: 0
