@@ -13,6 +13,8 @@ public class ButtonManager : MonoBehaviour {
 
 	public Text returnText;
 
+	public Text gameReturnText;
+
 	public void StartGame()
 	{
 		SceneManager.LoadScene ("MainGame");
@@ -71,5 +73,15 @@ public class ButtonManager : MonoBehaviour {
 	public void ChangeBackCreditTextColor()
 	{
 		creditText.color = Color.black;
+	}
+
+	public void ChangeGameReturnTextColor()
+	{
+		gameReturnText.color = Color.white;
+	}
+
+	public void ChangeBackGameReturnTextColor()
+	{
+		gameReturnText.color = Color.black;
 	}
 }
