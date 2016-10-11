@@ -37,6 +37,31 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        Movement();
+
+
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        Debug.Log("Entered");
+    }
+
+    void OnTriggerStay2D(Collider2D col)
+    {
+        Debug.Log("Touching!");
+
+        IInteractable interactable = col.gameObject.GetInterface<IInteractable>();
+
+        if (interactable != null)
+        {
+            interactable.Interact();
+        }
+    }
+
+
+    private void Movement()
+    {
         // West
         if (Input.GetAxis("Horizontal") < -0.01)
         {
@@ -58,7 +83,7 @@ public class Player : MonoBehaviour {
                     location = Location.W;
                     LeanTween.cancel(this.gameObject);
                     LeanTween.move(this.gameObject, w.position, travelTime).setEase(LeanTweenType.easeInOutQuad);
-                    
+
                 }
             }
             // North
