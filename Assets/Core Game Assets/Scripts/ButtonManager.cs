@@ -17,7 +17,7 @@ public class ButtonManager : MonoBehaviour {
 
 	public void StartGame()
 	{
-		SceneManager.LoadScene ("EndGame");
+		SceneManager.LoadScene ("MainGame");
 	}
 
 	public void ExitGame()
