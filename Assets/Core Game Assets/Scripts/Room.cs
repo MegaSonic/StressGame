@@ -14,11 +14,15 @@ public class Room : MonoBehaviour, IInteractable {
 
     public Transform backgroundBox;
 
+    public float timeSpent;
+
     public void Interact()
     {
-        if (currentRank == maxRank) return;
+        if (currentRank == maxRank)
+        {
 
-        if (currentEXP < maxEXP)
+        }
+        else if (currentEXP < maxEXP)
         {
             currentEXP += (int) (expGainRate * Time.deltaTime);
             
@@ -27,8 +31,9 @@ public class Room : MonoBehaviour, IInteractable {
         {
             currentEXP = 0;
             currentRank++;
-
         }
+
+        timeSpent += Time.deltaTime;
     }
 
     // Use this for initialization
