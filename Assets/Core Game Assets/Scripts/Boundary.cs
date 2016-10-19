@@ -11,19 +11,22 @@ public class Boundary : MonoBehaviour {
 	private float xPos;
 	private float yPos;
 	private float reactTimer;
+	private GameObject go;
 
 
 	// Use this for initialization
 	void Start () {
-		GameObject go = GameObject.FindGameObjectWithTag ("startPlayer");
-		xPos = go.transform.position.x;
-		yPos = go.transform.position.y;
+		go = GameObject.FindGameObjectWithTag ("startPlayer");
+
 		//Debug.Log (go.name);
+
 		reactTimer = DelayTime;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		xPos = go.transform.position.x;
+		yPos = go.transform.position.y;
 		/*
 		if (Input.GetButtonDown ("Fire1")) {
 			RaycastHit hit;
