@@ -23,12 +23,16 @@ public class Player : MonoBehaviour {
 
     public float speed;
 
+    private Animator animator;
+
     // Use this for initialization
     void Start () {
         topRight = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, 0));
         topLeft = Camera.main.ViewportToWorldPoint(new Vector3(0, 1, 0));
         bottomRight = Camera.main.ViewportToWorldPoint(new Vector3(1, 0, 0));
         bottomLeft = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0));
+
+        animator = this.GetComponent<Animator>();
     }
 	
 	// Update is called once per frame
@@ -72,6 +76,7 @@ public class Player : MonoBehaviour {
             {
                 this.transform.position = new Vector3(this.transform.position.x + speed * Time.deltaTime, this.transform.position.y, this.transform.position.z);
             }
+            animator.Play("playerMove");
         }
         else if (Input.GetAxis("Horizontal") < 0)
         {
@@ -87,20 +92,23 @@ public class Player : MonoBehaviour {
             {
                 this.transform.position = new Vector3(this.transform.position.x - speed * Time.deltaTime, this.transform.position.y, this.transform.position.z);
             }
+            animator.Play("playerMove");
         }
         else
         {
             if (Input.GetAxis("Vertical") > 0)
             {
                 this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + speed * Time.deltaTime, this.transform.position.z);
+                animator.Play("playerMove");
             }
             else if (Input.GetAxis("Vertical") < 0)
             {
                 this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y - speed * Time.deltaTime, this.transform.position.z);
+                animator.Play("playerMove");
             }
             else
             {
-                
+                animator.Play("playerIdle");
             }
         }
 
