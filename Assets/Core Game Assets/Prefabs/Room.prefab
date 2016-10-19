@@ -99,8 +99,10 @@ MonoBehaviour:
   currentEXP: 0
   currentRank: 1
   maxEXP: 1000
-  maxRank: 3
-  expGainRate: 150
+  maxRank: 1
+  expGainRate: 50
+  timeBeforeDecay: 5
+  decayRate: 20
   backgroundBox: {fileID: 4000010745554786}
   timeSpent: 0
 --- !u!212 &212000011057152896

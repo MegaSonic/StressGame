@@ -524,20 +524,7 @@ Prefab:
       propertyPath: m_Name
       value: School
       objectReference: {fileID: 0}
-    - target: {fileID: 4000011978460726, guid: 2afffdc57e85906438c824e6eb8dab85, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000011978460726, guid: 2afffdc57e85906438c824e6eb8dab85, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000011978460726, guid: 2afffdc57e85906438c824e6eb8dab85, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 7.131417
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 61000010041927876, guid: 2afffdc57e85906438c824e6eb8dab85, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2afffdc57e85906438c824e6eb8dab85, type: 2}
   m_IsPrefabParent: 0
 --- !u!114 &587932969 stripped
@@ -649,23 +636,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 31f923d49374e3e41af26d42881c9be4, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &742677557 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000012065726110, guid: 2afffdc57e85906438c824e6eb8dab85,
-    type: 2}
-  m_PrefabInternal: {fileID: 539875341}
---- !u!65 &742677558
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 742677557}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &770332829
 GameObject:
   m_ObjectHideFlags: 0
@@ -933,7 +903,7 @@ RectTransform:
   m_RootOrder: 5
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.03, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1082529471 stripped
