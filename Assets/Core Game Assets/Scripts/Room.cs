@@ -5,44 +5,64 @@ using System;
 public class Room : MonoBehaviour, IInteractable {
 
     public string roomName;
-    public int currentEXP;
+    public float currentEXP;
     public int currentRank;
 
-    public int maxEXP;
+    public float maxEXP;
     public int maxRank;
-    public int expGainRate;
+    public float expGainRate;
+
+    public float timeBeforeDecay;
+    public float decayRate;
+    private float decayTimer;
+
+    public float iconDecay;
 
     public Transform backgroundBox;
 
     public float timeSpent;
 
+    private Clock clock;
+
     public void Interact()
     {
-        if (currentRank == maxRank)
-        {
+        decayTimer = timeBeforeDecay;
 
-        }
-        else if (currentEXP < maxEXP)
+        if (currentEXP < maxEXP)
         {
-            currentEXP += (int) (expGainRate * Time.deltaTime);
-            
+            currentEXP += expGainRate * Time.deltaTime;
         }
         else
         {
-            currentEXP = 0;
-            currentRank++;
+            currentEXP = maxEXP;
         }
 
+        clock.AdvanceTime();
         timeSpent += Time.deltaTime;
     }
 
     // Use this for initialization
     void Start () {
-	   
-	}
+        decayTimer = timeBeforeDecay;
+        clock = GameObject.FindObjectOfType<Clock>();
+}
 	
 	// Update is called once per frame
 	void Update () {
-        backgroundBox.localScale = new Vector3(backgroundBox.localScale.x, (float) currentEXP / (float) maxEXP * 1.25f, backgroundBox.localScale.z);
+
+        decayTimer -= Time.deltaTime;
+
+        if (decayTimer < 0)
+        {
+            currentEXP -= decayRate * Time.deltaTime;
+        }
+
+        if (currentEXP < 0) currentEXP = 0;
+        backgroundBox.localScale = new Vector3(backgroundBox.localScale.x, (float) currentEXP / (float) maxEXP * 0.81f, backgroundBox.localScale.z);
+    }
+
+    public void Decay()
+    {
+        currentEXP -= iconDecay;
     }
 }
