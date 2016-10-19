@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 710cecd6527eca9429887f1ab5d04a35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomName: School
+  roomName: Home
   currentEXP: 0
   currentRank: 1
   maxEXP: 1000

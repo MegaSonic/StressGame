@@ -58,7 +58,7 @@ public class Room : MonoBehaviour, IInteractable {
         }
 
         if (currentEXP < 0) currentEXP = 0;
-        backgroundBox.localScale = new Vector3(backgroundBox.localScale.x, (float) currentEXP / (float) maxEXP * 1.25f, backgroundBox.localScale.z);
+        backgroundBox.localScale = new Vector3(backgroundBox.localScale.x, (float) currentEXP / (float) maxEXP * 0.81f, backgroundBox.localScale.z);
     }
 
     public void Decay()
