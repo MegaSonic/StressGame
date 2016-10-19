@@ -11,6 +11,9 @@ public class Clock : MonoBehaviour {
     public float startX;
     public float endX;
 
+
+    public Animator animator;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -26,6 +29,7 @@ public class Clock : MonoBehaviour {
         {
             currentTime = maxTime;
             Debug.Log("End");
+            animator.Play("endingAnimation");
         }
 	}
 
