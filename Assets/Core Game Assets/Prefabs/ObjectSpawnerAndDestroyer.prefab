@@ -103,8 +103,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseTimeBetweenSpawns: 1.5
-  lowMultiplier: 0.75
-  highMultiplier: 0.95
+  lowMultiplier: 0.01
+  highMultiplier: 1
   spawnDecayRate: 0.02
   minDecayRate: 1
   objectsToSpawn:

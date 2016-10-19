@@ -5,7 +5,9 @@ using System.Collections.Generic;
 
 public class SavedTimes : MonoBehaviour {
 
-    public List<TimeData> timeData;
+    public int roomEXP;
+    public int schoolEXP;
+    public List<float> timeData;
 
 	// Use this for initialization
 	void Start () {
@@ -16,11 +18,4 @@ public class SavedTimes : MonoBehaviour {
 	void Update () {
 	
 	}
-}
-
-[System.Serializable]
-public struct TimeData
-{
-    public string name;
-    public float time;
 }

@@ -11,12 +11,19 @@ public class Clock : MonoBehaviour {
     public float startX;
     public float endX;
 
+    public Player player;
+    public ObjectSpawn spawner;
+
 
     public Animator animator;
 
+    public Room home;
+    public Room school;
+    public SavedTimes save;
+
 	// Use this for initialization
 	void Start () {
-	
+        save = GameObject.FindObjectOfType<SavedTimes>();
 	}
 	
 	// Update is called once per frame
@@ -28,8 +35,13 @@ public class Clock : MonoBehaviour {
         if (currentTime >= maxTime)
         {
             currentTime = maxTime;
-            Debug.Log("End");
             animator.Play("endingAnimation");
+            player.enabled = false;
+            spawner.enabled = false;
+            save.roomEXP = (int) home.currentEXP;
+            save.schoolEXP = (int) school.currentEXP;
+            home.enabled = false;
+            school.enabled = false;
         }
 	}
 

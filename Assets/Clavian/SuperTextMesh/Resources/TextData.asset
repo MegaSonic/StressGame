@@ -11,11 +11,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b347e5d79dd1484ebedcac94b18f81d, type: 3}
   m_Name: TextData
   m_EditorClassIdentifier: 
-  textDataEditMode: 0
+  textDataEditMode: 1
   showEffectsFoldout: 1
   waves:
   - name: default
-    animateFromTimeDrawn: 0
+    animateFromTimeDrawn: 1
     main:
       curveX:
         serializedVersion: 2
@@ -2121,7 +2121,7 @@ MonoBehaviour:
     tiling: {x: 0.15, y: 0.15}
     offset: {x: 0, y: 0}
     scrollSpeed: {x: 0.5, y: 0.25}
-  showInlineFoldout: 0
+  showInlineFoldout: 1
   delays:
   - name: 64656661756c74
     count: 1
@@ -2174,4 +2174,4 @@ MonoBehaviour:
   - character: 092874616229
     clip: {fileID: 0}
   showMasterFoldout: 1
-  disableAnimatedText: 1
+  disableAnimatedText: 0
