@@ -23,6 +23,9 @@ public class Player : MonoBehaviour {
 
     public float speed;
 
+    public bool isInRoom;
+    public Room currentRoom;
+
     private Animator animator;
 
     // Use this for initialization
@@ -33,6 +36,7 @@ public class Player : MonoBehaviour {
         bottomLeft = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0));
 
         animator = this.GetComponent<Animator>();
+        isInRoom = false;
     }
 	
 	// Update is called once per frame
@@ -54,7 +58,20 @@ public class Player : MonoBehaviour {
 
     void OnTriggerEnter(Collider col)
     {
-        
+        if (col.gameObject.GetComponent<Room>() != null)
+        {
+            isInRoom = true;
+            currentRoom = col.gameObject.GetComponent<Room>();
+        }
+    }
+
+    void OnTriggerExit(Collider col)
+    {
+        if (col.gameObject.GetComponent<Room>() != null)
+        {
+            isInRoom = false;
+            currentRoom = null;
+        }
     }
 
     void OnTriggerStay(Collider col)
@@ -66,6 +83,11 @@ public class Player : MonoBehaviour {
         if (interactable != null)
         {
             interactable.Interact();
+
+            if (interactable is Icon && isInRoom)
+            {
+                currentRoom.Decay();
+            }
         }
     }
 

@@ -24,6 +24,7 @@ public class Clock : MonoBehaviour {
 
         if (currentTime >= maxTime)
         {
+            currentTime = maxTime;
             Debug.Log("End");
         }
 	}
@@ -32,10 +33,14 @@ public class Clock : MonoBehaviour {
     public void AdvanceTime()
     {
         currentTime += Time.deltaTime;
+
+        if (currentTime > maxTime) currentTime = maxTime;
     }
 
     public void AdvanceTime(float time)
     {
         currentTime += time;
+
+        if (currentTime > maxTime) currentTime = maxTime;
     }
 }

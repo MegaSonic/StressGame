@@ -102,11 +102,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 655c7f6f9042990409766d8ce3fa81e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseTimeBetweenSpawns: 3
+  baseTimeBetweenSpawns: 1.5
   lowMultiplier: 0.75
   highMultiplier: 0.95
-  spawnDecayRate: 0.1
-  minDecayRate: 0
+  spawnDecayRate: 0.02
+  minDecayRate: 1
   objectsToSpawn:
   - {fileID: 1000014067698016, guid: e8bf750ebe1c09847a96cad7a0e3bb23, type: 2}
   - {fileID: 1000010959995644, guid: 4e8c8f9d38a592e4fa7de0db09b679c0, type: 2}

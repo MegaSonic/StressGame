@@ -103,6 +103,7 @@ MonoBehaviour:
   expGainRate: 50
   timeBeforeDecay: 5
   decayRate: 20
+  iconDecay: 50
   backgroundBox: {fileID: 4000010745554786}
   timeSpent: 0
 --- !u!212 &212000011057152896
