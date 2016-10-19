@@ -16,24 +16,20 @@ public class Player : MonoBehaviour {
         SE = 8
     }
 
-    public Location location;
+    public Vector3 topRight;
+    public Vector3 topLeft;
+    public Vector3 bottomRight;
+    public Vector3 bottomLeft;
 
-    public Transform nw;
-    public Transform n;
-    public Transform ne;
-    public Transform w;
-    public Transform e;
-    public Transform sw;
-    public Transform s;
-    public Transform se;
-    public Transform center;
-
-    public float travelTime;
+    public float speed;
 
     // Use this for initialization
     void Start () {
-	
-	}
+        topRight = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, 0));
+        topLeft = Camera.main.ViewportToWorldPoint(new Vector3(0, 1, 0));
+        bottomRight = Camera.main.ViewportToWorldPoint(new Vector3(1, 0, 0));
+        bottomLeft = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0));
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -62,101 +58,68 @@ public class Player : MonoBehaviour {
 
     private void Movement()
     {
-        // West
-        if (Input.GetAxis("Horizontal") < -0.01)
+        if (Input.GetAxis("Horizontal") > 0)
         {
-            // South
-            if (Input.GetAxis("Vertical") < -0.01)
+            if (Input.GetAxis("Vertical") > 0)
             {
-                if (location != Location.SW)
-                {
-                    location = Location.SW;
-                    LeanTween.cancel(this.gameObject);
-                    LeanTween.move(this.gameObject, sw.position, travelTime).setEase(LeanTweenType.easeInOutQuad);
-                }
+                this.transform.position = new Vector3(this.transform.position.x + (speed * Mathf.Sqrt(2f) / 2) * Time.deltaTime, this.transform.position.y + (speed * Mathf.Sqrt(2f) / 2) * Time.deltaTime, this.transform.position.z);
             }
-            // Center
-            else if (Input.GetAxis("Vertical") < 0.01 && Input.GetAxis("Vertical") > -0.01)
+            else if (Input.GetAxis("Vertical") < 0)
             {
-                if (location != Location.W)
-                {
-                    location = Location.W;
-                    LeanTween.cancel(this.gameObject);
-                    LeanTween.move(this.gameObject, w.position, travelTime).setEase(LeanTweenType.easeInOutQuad);
+                this.transform.position = new Vector3(this.transform.position.x + (speed * Mathf.Sqrt(2f) / 2) * Time.deltaTime, this.transform.position.y - (speed * Mathf.Sqrt(2f) / 2) * Time.deltaTime, this.transform.position.z);
+            }
+            else
+            {
+                this.transform.position = new Vector3(this.transform.position.x + speed * Time.deltaTime, this.transform.position.y, this.transform.position.z);
+            }
+        }
+        else if (Input.GetAxis("Horizontal") < 0)
+        {
+            if (Input.GetAxis("Vertical") > 0)
+            {
+                this.transform.position = new Vector3(this.transform.position.x - (speed * Mathf.Sqrt(2f) / 2) * Time.deltaTime, this.transform.position.y + (speed * Mathf.Sqrt(2f) / 2) * Time.deltaTime, this.transform.position.z);
+            }
+            else if (Input.GetAxis("Vertical") < 0)
+            {
+                this.transform.position = new Vector3(this.transform.position.x - (speed * Mathf.Sqrt(2f) / 2) * Time.deltaTime, this.transform.position.y - (speed * Mathf.Sqrt(2f) / 2) * Time.deltaTime, this.transform.position.z);
+            }
+            else
+            {
+                this.transform.position = new Vector3(this.transform.position.x - speed * Time.deltaTime, this.transform.position.y, this.transform.position.z);
+            }
+        }
+        else
+        {
+            if (Input.GetAxis("Vertical") > 0)
+            {
+                this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + speed * Time.deltaTime, this.transform.position.z);
+            }
+            else if (Input.GetAxis("Vertical") < 0)
+            {
+                this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y - speed * Time.deltaTime, this.transform.position.z);
+            }
+            else
+            {
+                
+            }
+        }
 
-                }
-            }
-            // North
-            else if (Input.GetAxis("Vertical") > 0.01)
-            {
-                if (location != Location.NW)
-                {
-                    location = Location.NW;
-                    LeanTween.cancel(this.gameObject);
-                    LeanTween.move(this.gameObject, nw.position, travelTime).setEase(LeanTweenType.easeInOutQuad);
-                }
-            }
-        }
-        else if (Input.GetAxis("Horizontal") < 0.01 && Input.GetAxis("Horizontal") > -0.01)
+        if (this.transform.position.x < topLeft.x)
         {
-            if (Input.GetAxis("Vertical") < -0.01)
-            {
-                if (location != Location.S)
-                {
-                    location = Location.S;
-                    LeanTween.cancel(this.gameObject);
-                    LeanTween.move(this.gameObject, s.position, travelTime).setEase(LeanTweenType.easeInOutQuad);
-                }
-            }
-            else if (Input.GetAxis("Vertical") < 0.01 && Input.GetAxis("Vertical") > -0.01)
-            {
-                if (location != Location.C)
-                {
-                    location = Location.C;
-                    LeanTween.cancel(this.gameObject);
-                    LeanTween.move(this.gameObject, center.position, travelTime).setEase(LeanTweenType.easeInOutQuad);
-                }
-            }
-            else if (Input.GetAxis("Vertical") > 0.01)
-            {
-                if (location != Location.N)
-                {
-                    location = Location.N;
-                    LeanTween.cancel(this.gameObject);
-                    LeanTween.move(this.gameObject, n.position, travelTime).setEase(LeanTweenType.easeInOutQuad);
-                }
-            }
+            this.transform.position = new Vector3(topLeft.x, transform.position.y, transform.position.z);
         }
-        else if (Input.GetAxis("Horizontal") > 0.01)
+        else if (this.transform.position.x > topRight.x)
         {
-            // North
-            if (Input.GetAxis("Vertical") < -0.01)
-            {
-                if (location != Location.SE)
-                {
-                    location = Location.SE;
-                    LeanTween.cancel(this.gameObject);
-                    LeanTween.move(this.gameObject, se.position, travelTime).setEase(LeanTweenType.easeInOutQuad);
-                }
-            }
-            else if (Input.GetAxis("Vertical") < 0.01 && Input.GetAxis("Vertical") > -0.01)
-            {
-                if (location != Location.E)
-                {
-                    location = Location.E;
-                    LeanTween.cancel(this.gameObject);
-                    LeanTween.move(this.gameObject, e.position, travelTime).setEase(LeanTweenType.easeInOutQuad);
-                }
-            }
-            else if (Input.GetAxis("Vertical") > 0.01)
-            {
-                if (location != Location.NE)
-                {
-                    location = Location.NE;
-                    LeanTween.cancel(this.gameObject);
-                    LeanTween.move(this.gameObject, ne.position, travelTime).setEase(LeanTweenType.easeInOutQuad);
-                }
-            }
+            this.transform.position = new Vector3(topRight.x, transform.position.y, transform.position.z);
         }
+        if (this.transform.position.y > topLeft.y)
+        {
+            this.transform.position = new Vector3(transform.position.x, topLeft.y, transform.position.z);
+        }
+        else if (this.transform.position.y < bottomRight.y)
+        {
+            this.transform.position = new Vector3(transform.position.x, bottomRight.y, transform.position.z);
+        }
+
     }
 }
