@@ -49,6 +49,16 @@ public class Player : MonoBehaviour {
 
     void OnTriggerStay2D(Collider2D col)
     {
+        
+    }
+
+    void OnTriggerEnter(Collider col)
+    {
+        
+    }
+
+    void OnTriggerStay(Collider col)
+    {
         Debug.Log("Touching!");
 
         IInteractable interactable = col.gameObject.GetInterface<IInteractable>();
@@ -58,7 +68,6 @@ public class Player : MonoBehaviour {
             interactable.Interact();
         }
     }
-
 
     private void Movement()
     {

@@ -16,6 +16,8 @@ public class Room : MonoBehaviour, IInteractable {
 
     public float timeSpent;
 
+    private Clock clock;
+
     public void Interact()
     {
         if (currentRank == maxRank)
@@ -33,13 +35,15 @@ public class Room : MonoBehaviour, IInteractable {
             currentRank++;
         }
 
+        clock.AdvanceTime();
         timeSpent += Time.deltaTime;
     }
 
     // Use this for initialization
     void Start () {
-	   
-	}
+
+        clock = GameObject.FindObjectOfType<Clock>();
+}
 	
 	// Update is called once per frame
 	void Update () {

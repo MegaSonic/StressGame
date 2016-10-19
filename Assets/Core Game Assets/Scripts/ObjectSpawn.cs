@@ -8,6 +8,10 @@ public class ObjectSpawn : MonoBehaviour {
     public float lowMultiplier;
     public float highMultiplier;
 
+    public float spawnDecayRate;
+    public float minDecayRate;
+    
+
     private float spawnTimer;
 
     public List<GameObject> objectsToSpawn;
@@ -38,6 +42,10 @@ public class ObjectSpawn : MonoBehaviour {
             int rand = (int) Random.Range(0f, objectsToSpawn.Count);
             GameObject go = Instantiate(Resources.Load(objectsToSpawn[rand].name)) as GameObject;
 
+            if (baseTimeBetweenSpawns > minDecayRate)
+            {
+                baseTimeBetweenSpawns -= spawnDecayRate;
+            }
             spawnTimer = Random.Range(lowMultiplier, highMultiplier) * baseTimeBetweenSpawns;
             go.transform.position = new Vector3(Random.Range(topLeft.x, topRight.x), topLeft.y + 3, -1);
             go.transform.rotation = Quaternion.Euler(Random.Range(0, 360), Random.Range(0, 360), Random.Range(0, 360));
