@@ -24,9 +24,13 @@ public class Room : MonoBehaviour, IInteractable {
 
     private Clock clock;
 
+    public ParticleSystem particles;
+
     public void Interact()
     {
         decayTimer = timeBeforeDecay;
+        particles.Stop();
+        particles.gameObject.SetActive(false);
 
         if (currentEXP < maxEXP)
         {
@@ -42,10 +46,13 @@ public class Room : MonoBehaviour, IInteractable {
     }
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         decayTimer = timeBeforeDecay;
         clock = GameObject.FindObjectOfType<Clock>();
-}
+        particles.Stop();
+        particles.gameObject.SetActive(false);
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -54,6 +61,11 @@ public class Room : MonoBehaviour, IInteractable {
 
         if (decayTimer < 0)
         {
+            if (!particles.gameObject.activeSelf)
+            {
+                particles.gameObject.SetActive(true);
+                particles.Play();
+            }
             currentEXP -= decayRate * Time.deltaTime;
         }
 
