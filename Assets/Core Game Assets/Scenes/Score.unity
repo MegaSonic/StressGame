@@ -435,6 +435,7 @@ GameObject:
   - 4: {fileID: 385239251}
   - 212: {fileID: 385239250}
   - 114: {fileID: 385239252}
+  - 114: {fileID: 385239253}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -510,6 +511,23 @@ MonoBehaviour:
   item6: {fileID: 1417384277}
   item7: {fileID: 1872947151}
   final: {fileID: 1687169183}
+--- !u!114 &385239253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 385239249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b962fbe1522d7f14cb77129163d35b22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startText: {fileID: 0}
+  exitText: {fileID: 0}
+  creditText: {fileID: 0}
+  returnText: {fileID: 0}
+  gameReturnText: {fileID: 0}
+  playAgainText: {fileID: 1740736618}
 --- !u!1001 &475736350
 Prefab:
   m_ObjectHideFlags: 0
@@ -1660,12 +1678,12 @@ Prefab:
     - target: {fileID: 224000013367091590, guid: c21b2601421ad0b49b322cd94d23b188,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -47
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224000013367091590, guid: c21b2601421ad0b49b322cd94d23b188,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 273
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114000010855167694, guid: c21b2601421ad0b49b322cd94d23b188,
         type: 2}
@@ -1676,6 +1694,72 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ReturnToTitle
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011696634930, guid: c21b2601421ad0b49b322cd94d23b188,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 3e7145835c1125d42be4b62701f108ca,
+        type: 3}
+    - target: {fileID: 114000011696634930, guid: c21b2601421ad0b49b322cd94d23b188,
+        type: 2}
+      propertyPath: m_Text
+      value: Play Again
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011696634930, guid: c21b2601421ad0b49b322cd94d23b188,
+        type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000013367091590, guid: c21b2601421ad0b49b322cd94d23b188,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000013367091590, guid: c21b2601421ad0b49b322cd94d23b188,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 54.200012
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000013367091590, guid: c21b2601421ad0b49b322cd94d23b188,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000013367091590, guid: c21b2601421ad0b49b322cd94d23b188,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000013367091590, guid: c21b2601421ad0b49b322cd94d23b188,
+        type: 2}
+      propertyPath: m_Pivot.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000013367091590, guid: c21b2601421ad0b49b322cd94d23b188,
+        type: 2}
+      propertyPath: m_Pivot.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013213162916, guid: c21b2601421ad0b49b322cd94d23b188,
+        type: 2}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 385239253}
+    - target: {fileID: 114000013213162916, guid: c21b2601421ad0b49b322cd94d23b188,
+        type: 2}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangePlayAgainTextColor
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013213162916, guid: c21b2601421ad0b49b322cd94d23b188,
+        type: 2}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 385239253}
+    - target: {fileID: 114000013213162916, guid: c21b2601421ad0b49b322cd94d23b188,
+        type: 2}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeBackPlayAgainTextColor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c21b2601421ad0b49b322cd94d23b188, type: 2}
@@ -1696,6 +1780,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fc587fc6fc33d5489273f2bad698d86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1740736618 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000011696634930, guid: c21b2601421ad0b49b322cd94d23b188,
+    type: 2}
+  m_PrefabInternal: {fileID: 1740736615}
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1001 &1761650295
 Prefab:
   m_ObjectHideFlags: 0

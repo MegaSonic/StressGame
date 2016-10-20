@@ -15,6 +15,8 @@ public class ButtonManager : MonoBehaviour {
 
 	public Text gameReturnText;
 
+	public Text playAgainText;
+
 	public void StartGame()
 	{
 		SceneManager.LoadScene ("IconSelect");
@@ -83,5 +85,15 @@ public class ButtonManager : MonoBehaviour {
 	public void ChangeBackGameReturnTextColor()
 	{
 		gameReturnText.color = Color.black;
+	}
+
+	public void ChangePlayAgainTextColor()
+	{
+		playAgainText.color = Color.white;
+	}
+
+	public void ChangeBackPlayAgainTextColor()
+	{
+		playAgainText.color = Color.black;
 	}
 }
