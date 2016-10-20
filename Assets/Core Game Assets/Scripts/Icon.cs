@@ -10,11 +10,24 @@ public class Icon : MonoBehaviour, IInteractable {
 
     public SavedTimes save;
     private Clock clock;
+    private IconSelect iconSelect;
+
 
     public void Interact()
     {
-        clock.AdvanceTime(timeToAdvance);
-        save.timeData[id]++;
+        if (clock != null) clock.AdvanceTime(timeToAdvance);
+        if (iconSelect != null && iconSelect.choicesLockedIn == false) iconSelect.MakeChoice(id);
+        if (save != null)
+        {
+            if (id == iconSelect.icon1 || id == iconSelect.icon2)
+            {
+                save.timeData[id]++;
+            }
+            else
+            {
+                save.timeData[id]--;
+            }
+        }
         Destroy(this.gameObject);
     }
 
@@ -22,6 +35,7 @@ public class Icon : MonoBehaviour, IInteractable {
     void Start () {
         clock = GameObject.FindObjectOfType<Clock>();
         save = GameObject.FindObjectOfType<SavedTimes>();
+        iconSelect = GameObject.FindObjectOfType<IconSelect>();
     }
 
 	// Update is called once per frame
