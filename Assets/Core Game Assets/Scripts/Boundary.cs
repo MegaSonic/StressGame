@@ -54,7 +54,7 @@ public class Boundary : MonoBehaviour {
 		if (xPos > 2.2f && xPos < 5.7f && yPos > -1.6f && yPos < 1.1f) {
 			reactTimer -= Time.deltaTime;
 			if (reactTimer <= 0.0f)
-				SceneManager.LoadScene ("MainGame");
+				SceneManager.LoadScene ("IconSelect");
 		}
 
 	}
