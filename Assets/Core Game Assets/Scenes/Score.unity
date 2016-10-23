@@ -237,7 +237,7 @@ GameObject:
   - 222: {fileID: 261841028}
   - 114: {fileID: 261841027}
   m_Layer: 5
-  m_Name: ItemScoreText (5)
+  m_Name: ItemScoreText (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -503,13 +503,13 @@ MonoBehaviour:
   home: {fileID: 1876183807}
   school: {fileID: 1574638804}
   item0: {fileID: 863282524}
-  item1: {fileID: 1732202070}
-  item2: {fileID: 2131137687}
-  item3: {fileID: 2013229618}
+  item1: {fileID: 1417384277}
+  item2: {fileID: 1872947151}
+  item3: {fileID: 642239687}
   item4: {fileID: 261841027}
-  item5: {fileID: 642239687}
-  item6: {fileID: 1417384277}
-  item7: {fileID: 1872947151}
+  item5: {fileID: 2013229618}
+  item6: {fileID: 2131137687}
+  item7: {fileID: 1732202070}
   final: {fileID: 1687169183}
 --- !u!114 &385239253
 MonoBehaviour:
@@ -598,7 +598,7 @@ GameObject:
   - 222: {fileID: 642239688}
   - 114: {fileID: 642239687}
   m_Layer: 5
-  m_Name: ItemScoreText (6)
+  m_Name: ItemScoreText (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -788,7 +788,7 @@ GameObject:
   - 222: {fileID: 863282525}
   - 114: {fileID: 863282524}
   m_Layer: 5
-  m_Name: ItemScoreText (1)
+  m_Name: ItemScoreText (0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1120,7 +1120,7 @@ GameObject:
   - 222: {fileID: 1417384278}
   - 114: {fileID: 1417384277}
   m_Layer: 5
-  m_Name: ItemScoreText (7)
+  m_Name: ItemScoreText (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1507,7 +1507,7 @@ GameObject:
   - 222: {fileID: 1732202071}
   - 114: {fileID: 1732202070}
   m_Layer: 5
-  m_Name: ItemScoreText (2)
+  m_Name: ItemScoreText (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1856,7 +1856,7 @@ GameObject:
   - 222: {fileID: 1872947152}
   - 114: {fileID: 1872947151}
   m_Layer: 5
-  m_Name: ItemScoreText (8)
+  m_Name: ItemScoreText (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2142,7 +2142,7 @@ GameObject:
   - 222: {fileID: 2013229619}
   - 114: {fileID: 2013229618}
   m_Layer: 5
-  m_Name: ItemScoreText (4)
+  m_Name: ItemScoreText (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2303,7 +2303,7 @@ GameObject:
   - 222: {fileID: 2131137688}
   - 114: {fileID: 2131137687}
   m_Layer: 5
-  m_Name: ItemScoreText (3)
+  m_Name: ItemScoreText (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
